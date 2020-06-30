@@ -1,0 +1,10 @@
+include ':app'
+include ':common'
+include ':network-core'
+include ':analytics:core'
+include ':analytics:adjust'
+include ':analytics:google'
+include ':feature_1'
+include ':feature_2'
+
+rootProject.name = "DiExample"

@@ -1,0 +1,3 @@
+package com.example.diexample.network.interceptor
+
+interface RequestInterceptor

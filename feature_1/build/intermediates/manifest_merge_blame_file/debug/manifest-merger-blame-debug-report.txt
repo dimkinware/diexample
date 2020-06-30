@@ -1,0 +1,30 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.diexample.feature_1" >
+4
+5    <uses-sdk android:minSdkVersion="1" />
+5-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml
+6
+7    <application>
+7-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:5:5-14:19
+8        <activity android:name="com.example.diexample.feature_1.ui.ActivityFirstFeature" >
+8-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:6:9-13:20
+8-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:6:19-58
+9            <intent-filter>
+9-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:7:13-12:29
+10                <action android:name="android.intent.action.MAIN" />
+10-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:8:17-68
+10-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:8:25-66
+11
+12                <category android:name="android.intent.category.LAUNCHER" />
+12-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:9:17-76
+12-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:9:27-74
+13                <!-- for ProcessPhoenix rebirth -->
+14                <category android:name="android.intent.category.DEFAULT" />
+14-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:11:17-75
+14-->/Users/nikitagusarov/Documents/repo/diexample/feature_1/src/main/AndroidManifest.xml:11:27-73
+15            </intent-filter>
+16        </activity>
+17    </application>
+18
+19</manifest>

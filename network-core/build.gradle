@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 30
+}
+
+dependencies {
+    api 'com.google.dagger:dagger:2.27'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
