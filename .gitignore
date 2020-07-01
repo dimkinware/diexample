@@ -12,3 +12,12 @@
 /captures
 .externalNativeBuild
 .cxx
+*.DS_Store
+*.apk
+*.aab
+output.json
+local.properties
+build
+reports/
+captures/
+.idea
