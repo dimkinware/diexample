@@ -60,5 +60,5 @@ fun Fragment.findComponentDependenciesProvider(): ComponentDependenciesProvider 
 }
 
 private inline fun throwDontHaveProvider(target: Any): Nothing {
-    throw IllegalArgumentException("Can find dagger rovider for $target")
+    throw IllegalArgumentException("Can find dagger provider for $target")
 }
