@@ -17,7 +17,7 @@ interface FeatureFirstComponent {
     interface Factory {
         fun create(
             dependencies: FeatureFirstDependencies,
-            featureFirstModule: FeatureFirstModule
+            featureFirstModule: FeatureFirstModule // why we need it here?
         ): FeatureFirstComponent
     }
 }

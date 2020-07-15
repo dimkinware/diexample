@@ -7,7 +7,7 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 
 @SuppressLint("NewApi")
-class ActivitySecondFeature : AppCompatActivity() {
+internal class ActivitySecondFeature : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

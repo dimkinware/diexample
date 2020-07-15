@@ -7,7 +7,7 @@ import dagger.Component
 @PerFragment
 @Component(
     dependencies = [FeatureSecondDependencies::class],
-    modules = [FeatureSecondModule::class]
+    modules = [FeatureSecondModuleApi::class]
 )
 interface FeatureSecondComponent {
 
@@ -16,8 +16,7 @@ interface FeatureSecondComponent {
     @Component.Factory
     interface Factory {
         fun create(
-            dependencies: FeatureSecondDependencies,
-            featureSecondModule: FeatureSecondModule
+            dependencies: FeatureSecondDependencies
         ): FeatureSecondComponent
     }
 }

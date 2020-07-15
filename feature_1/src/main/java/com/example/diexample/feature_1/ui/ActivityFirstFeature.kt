@@ -13,7 +13,7 @@ import com.example.diexample.feature_1.di.DaggerFeatureFirstComponent
 import com.example.diexample.feature_1.di.FeatureFirstModule
 import com.example.diexample.feature_1.viewmodel.FeatureFirstViewModel
 import com.example.diexample.feature_1.viewmodel.FeatureFirstViewState
-import com.example.diexample.feature_2.ui.ActivitySecondFeature
+import com.example.diexample.feature_2.FeatureSecondStarter
 import javax.inject.Inject
 
 class ActivityFirstFeature : AppCompatActivity() {
@@ -21,6 +21,9 @@ class ActivityFirstFeature : AppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: FeatureFirstViewModel
+
+    @Inject
+    lateinit var featureSecondStarter: FeatureSecondStarter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +33,7 @@ class ActivityFirstFeature : AppCompatActivity() {
 
         viewModel = viewModelFactory.create(FeatureFirstViewModel::class.java).apply {
             viewState.observe(this@ActivityFirstFeature, Observer(::receiveViewState))
-            openScreenAction.observe(this@ActivityFirstFeature, Observer { openThirdScreen() })
+            openScreenAction.observe(this@ActivityFirstFeature, Observer { openFeatureSecondScreen() })
         }
     }
 
@@ -58,8 +61,8 @@ class ActivityFirstFeature : AppCompatActivity() {
         }
     }
 
-    private fun openThirdScreen() {
-        startActivity(Intent(this, ActivitySecondFeature::class.java))
+    private fun openFeatureSecondScreen() {
+        featureSecondStarter.start(this)
     }
 
     private fun receiveClick(value: String) {

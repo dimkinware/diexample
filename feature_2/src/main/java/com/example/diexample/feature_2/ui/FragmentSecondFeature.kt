@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.diexample.analytics.Adjust
 import com.example.diexample.di.findComponentDependencies
+import com.example.diexample.feature_2.FeatureSecondInteractor
 import com.example.diexample.feature_2.R
 import com.example.diexample.feature_2.di.DaggerFeatureSecondComponent
-import com.example.diexample.feature_2.di.FeatureSecondModule
 import com.example.diexample.network.CoreApi
 import javax.inject.Inject
 
@@ -20,6 +20,8 @@ class FragmentSecondFeature: Fragment() {
     lateinit var coreApi: CoreApi
     @Inject
     lateinit var adjust: Adjust
+    @Inject
+    lateinit var interactor: FeatureSecondInteractor
 
     private lateinit var text: TextView
 
@@ -42,8 +44,8 @@ class FragmentSecondFeature: Fragment() {
     private fun initDependencies() {
         DaggerFeatureSecondComponent.factory()
             .create(
-                dependencies = findComponentDependencies(),
-                featureSecondModule = FeatureSecondModule()
+                dependencies = findComponentDependencies()
+//                featureSecondModule = FeatureSecondModule()  ??? why we need it here?
             ).inject(this)
     }
 }
