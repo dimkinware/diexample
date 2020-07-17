@@ -8,19 +8,20 @@ import dagger.Module
 import dagger.Provides
 
 
-// This module provides API of this feature for using in other features
-// Pay attention that this module is used in AppComponent and in FeatureSecondComponent!
-// I'm not sure about scope here!
+// This module provides _API_ of this feature for using in other features
+// Pay attention that this module is used in AppComponent _only_
 
 @Module
 class FeatureSecondModuleApi {
 
     @Provides
+    @FeatureSecondScope
     fun provideFeatureSecondStarter() : FeatureSecondStarter {
         return FeatureSecondStarterImpl()
     }
 
     @Provides
+    @FeatureSecondScope
     fun provideFeatureSecondInteractor() : FeatureSecondInteractor {
         return FeatureSecondInteractorImpl()
     }

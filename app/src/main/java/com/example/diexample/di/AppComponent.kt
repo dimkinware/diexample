@@ -5,6 +5,7 @@ import com.example.diexample.analytics.di.AnalyticsModule
 import com.example.diexample.feature_1.di.FeatureFirstDependencies
 import com.example.diexample.feature_2.di.FeatureSecondDependencies
 import com.example.diexample.feature_2.di.FeatureSecondModuleApi
+import com.example.diexample.feature_2.di.FeatureSecondScope
 import com.example.diexample.network.di.NetworkCoreModule
 import dagger.Component
 import javax.inject.Singleton
@@ -12,6 +13,7 @@ import javax.inject.Singleton
 /**
  * Default App Component
  */
+@FeatureSecondScope
 @Singleton
 @Component(
     modules = [
@@ -19,7 +21,7 @@ import javax.inject.Singleton
         NetworkCoreModule::class,
         AnalyticsModule::class,
         ComponentDependenciesModule::class,
-        FeatureSecondModuleApi::class // is this a good idea???
+        FeatureSecondModuleApi::class
     ]
 )
 interface AppComponent

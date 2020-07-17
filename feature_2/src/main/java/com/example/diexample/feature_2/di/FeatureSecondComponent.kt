@@ -6,8 +6,7 @@ import dagger.Component
 
 @PerFragment
 @Component(
-    dependencies = [FeatureSecondDependencies::class],
-    modules = [FeatureSecondModuleApi::class]
+    dependencies = [FeatureSecondDependencies::class]
 )
 interface FeatureSecondComponent {
 
