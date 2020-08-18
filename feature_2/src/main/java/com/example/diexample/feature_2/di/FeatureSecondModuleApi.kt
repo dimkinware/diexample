@@ -4,25 +4,28 @@ import com.example.diexample.feature_2.FeatureSecondInteractor
 import com.example.diexample.feature_2.FeatureSecondInteractorImpl
 import com.example.diexample.feature_2.FeatureSecondStarter
 import com.example.diexample.feature_2.FeatureSecondStarterImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 
-// This module provides _API_ of this feature for using in other features
+// This module provides _API_ of this feature for using in other features too
 // Pay attention that this module is used in AppComponent _only_
 
-@Module
+@Module(
+    includes = [FeatureSecondModule::class,
+        FeatureSecondModuleApi.Binding::class]
+)
 class FeatureSecondModuleApi {
 
-    @Provides
-    @FeatureSecondScope
-    fun provideFeatureSecondStarter() : FeatureSecondStarter {
-        return FeatureSecondStarterImpl()
-    }
+    @Module
+    abstract class Binding {
 
-    @Provides
-    @FeatureSecondScope
-    fun provideFeatureSecondInteractor() : FeatureSecondInteractor {
-        return FeatureSecondInteractorImpl()
+        @Binds
+        @FeatureSecondScope
+        internal abstract fun bindFeatureSecondStarter(starter: FeatureSecondStarterImpl): FeatureSecondStarter
+
+        @Binds
+        @FeatureSecondScope
+        internal abstract fun bindFeatureSecondInteractor(starter: FeatureSecondInteractorImpl): FeatureSecondInteractor
     }
 }

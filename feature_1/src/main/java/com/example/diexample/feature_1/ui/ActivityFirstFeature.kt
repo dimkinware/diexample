@@ -13,6 +13,7 @@ import com.example.diexample.feature_1.di.DaggerFeatureFirstComponent
 import com.example.diexample.feature_1.di.FeatureFirstModule
 import com.example.diexample.feature_1.viewmodel.FeatureFirstViewModel
 import com.example.diexample.feature_1.viewmodel.FeatureFirstViewState
+import com.example.diexample.feature_2.FeatureSecondInteractor
 import com.example.diexample.feature_2.FeatureSecondStarter
 import javax.inject.Inject
 
